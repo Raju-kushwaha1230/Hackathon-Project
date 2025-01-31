@@ -38,7 +38,7 @@ venv\Scripts\activate     # For Windows
  2. Open a web browser and navigate to http://127.0.0.1:500
 
  Project Structure
-
+```
  skin-type-checker/
 │
 ├── app.py              # Main Flask backend
@@ -52,7 +52,7 @@ venv\Scripts\activate     # For Windows
 │
 ├── requirements.txt    # Python dependencies
 └── README.md           # Project documentation
-
+```
 Backend (Flask):
 app.py: Handles the backend logic, including serving the web pages and handling image uploads for processing via the machine learning model.
 Frontend:
