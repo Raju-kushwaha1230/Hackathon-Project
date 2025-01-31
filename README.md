@@ -11,7 +11,7 @@ Recommend products for the detected skin type.
 -----------
 1. Clone the repository
 ```
-git clone https://github.com/your-username/skin-type-checker.git
+git clone https://github.com/Raju-kushwaha1230/Hackathon-Project
 ```
 -----------
 2. Navigate to the project folder
