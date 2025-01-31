@@ -1,0 +1,56 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Mental Health Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+          <a href="/"><img src="/static/logo.png" alt="Logo"></a>
+        </div>
+        
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item dropdown">
+              <a href="#">Services</a>
+              <ul class="dropdown-content">
+                <li><a href="/">Home</a></li>
+                <li><a href="/index">Skin Analysis</a></li>
+                <li><a href="/Mental">Mental Health Check</a></li>
+                <li><a href="/Doctor">AI Doctor</a></li>
+                <li><a href="/Wellness">Wellness Tips</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms Of Service</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a href="/aboutus">About</a></li>
+            <li class="nav-item"><a href="/contact">Contact</a></li>
+            <li class="nav-item"><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+        
+        <button class="navbar-btn"><a href="/register">Get Started</a></button>
+      </header>
+    <div class="container">
+        <h1>Your Mental Health Assessment Results</h1>
+        <div class="result-box">
+            <p class="score">Your mental health score is: <span class="prediction">{{ prediction }}</span></p>
+            <p class="note">The higher the score, the higher the need to seek professional help.</p>
+        </div>
+    </div>
+
+    <!-- Optional JS for animations or interactivity -->
+    <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+</body>
+</html>
+

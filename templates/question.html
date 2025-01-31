@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question {{ question.id }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/question.css') }}">
+    
+</head>
+<body>
+    <div class="question-container">
+        <div class="question-box">
+            <h1>Question {{ question.id }}</h1>
+            <p class="question-text">{{ question.text }}</p>
+            <p><strong>Scale:</strong> {{ question.scale }}</p>
+            <form method="POST" class="response-form">
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="response" value="0" required>
+                        <span>0</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="response" value="1" required>
+                        <span>1</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="response" value="2" required>
+                        <span>2</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="response" value="3" required>
+                        <span>3</span>
+                    </label>
+                </div>
+                <button type="submit" class="next-button">Next</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/question.js') }}"></script>
+    <script>
+        // JavaScript to animate the form
+        document.querySelectorAll('.option span').forEach(span => {
+            span.addEventListener('click', () => {
+                document.querySelectorAll('.option span').forEach(s => s.classList.remove('active'));
+                span.classList.add('active');
+            });
+        });
+
+        
+    </script>
+</body>
+</html>
+

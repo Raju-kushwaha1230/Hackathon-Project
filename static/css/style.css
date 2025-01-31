@@ -1,0 +1,75 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #d4c4c4, #dbb8d1);
+    color: #fff;
+}
+
+/* Center the login container */
+.login-container , .register-container {
+    height: 60vh;
+    max-width: 400px;
+    margin: 100px auto;
+    background: rgba(255, 255, 255, 0.2);
+    background-blend-mode:color-burn;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Form elements */
+.login-container  h2 , .register-container h2{
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.login-container input ,.register-container input{
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1em;
+}
+
+.login-container button , .register-container button{
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #4caf50;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-container button:hover , .register-container button:hover{
+    background: #45a049;
+}
+
+.login-container p  ,.register-container p{
+    font-size: 0.9em;
+}
+
+.login-container a , .register-container a{
+    color: #ffe600;
+    text-decoration: none;
+}
+
+.login-container a:hover,  .register-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+}

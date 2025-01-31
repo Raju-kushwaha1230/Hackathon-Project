@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+<link rel="stylesheet" href="/static/about.css">
+
+{% block content %}
+<main class="about-container">
+    <section class="about-hero">
+        <h1>Welcome to WellNexus</h1>
+        <p>
+            We are on a mission to revolutionize wellness by offering an AI-powered platform that seamlessly integrates
+            <strong>mental health support</strong>, <strong>skin care solutions</strong>, and <strong>medical insights</strong>
+            into one comprehensive application.
+        </p>
+    </section>
+
+    <section class="about-section-vision">
+        <h2>Our Vision</h2>
+        <p>To empower individuals with the tools and insights they need to achieve holistic well-being—nurturing the mind, body, and skin.</p>
+
+        <h2>Our Mission</h2>
+        <ul>
+            <li><strong>Personalized Care:</strong> Deliver tailored recommendations for mental health, skin care, and general health through advanced AI technology.</li>
+            <li><strong>Accessibility:</strong> Provide easy-to-use tools that make self-care available to all, regardless of location or resources.</li>
+            <li><strong>Integration:</strong> Create a seamless experience where users can address multiple aspects of their health in one place.</li>
+        </ul>
+    </section>
+
+    <section class="about-feature-cards">
+        <div class="about-feature-card">
+            <h3>Mental Health Insights</h3>
+            <p>AI-powered emotion detection and wellness tips to support emotional resilience and clarity.</p>
+        </div>
+        <div class="about-feature-card">
+            <h3>Skin Care Solutions</h3>
+            <p>Personalized skin analysis and care routines tailored to your unique needs.</p>
+        </div>
+        <div class="about-feature-card">
+            <h3>Virtual AI Doctor</h3>
+            <p>Access reliable AI-guided health advice for quick, actionable insights.</p>
+        </div>
+    </section>
+
+    <section class="about-why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Holistic Approach:</strong> We address your mind, body, and skin together for true wellness.</li>
+            <li><strong>Cutting-Edge Technology:</strong> Advanced AI ensures accuracy, reliability, and personalization.</li>
+            <li><strong>Empowerment:</strong> We aim to give you the knowledge and tools to take charge of your well-being.</li>
+        </ul>
+    </section>
+
+    <section class="about-join-us">
+        <h2>Join Us on This Journey</h2>
+        <p>At WellNexus, we believe in a world where everyone has the opportunity to look and feel their best, both inside and out. Together, let’s build a healthier, more confident future.</p>
+    </section>
+</main>
+
+{% include 'footer.html' %}
+{% endblock %}

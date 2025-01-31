@@ -1,0 +1,9 @@
+Flask
+inference-sdk
+Werkzeug
+Flask-Cors
+requests
+Flask==2.2.2
+scikit-learn==1.1.2
+joblib==1.1.0
+numpy==1.23.0

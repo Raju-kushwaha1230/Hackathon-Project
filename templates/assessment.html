@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Assessment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="assessment-container">
+        <h2>Mental Health Assessment</h2>
+        <form action="{{ url_for('result') }}" method="POST">
+            <label for="stress">How stressed do you feel on a scale of 1-10?</label>
+            <input type="number" id="stress" name="stress" min="1" max="10" required>
+
+            <label for="mood">How is your mood today on a scale of 1-10?</label>
+            <input type="number" id="mood" name="mood" min="1" max="10" required>
+
+            <label for="sleep">How well did you sleep last night on a scale of 1-10?</label>
+            <input type="number" id="sleep" name="sleep" min="1" max="10" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/logout">Logout</a>
+
+    </div>
+</body>
+</html>

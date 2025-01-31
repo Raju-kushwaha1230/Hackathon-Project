@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/contact.css">
+
+<main>
+  <section class="contact-us-section">
+    <h1>Contact us</h1>
+    <p><a href="/" class="home-link">Home</a> | <a href="/contact">Contact</a></p>
+  </section>
+  
+  <section class="connect-with-us">
+    <h2>Let’s get Connected</h2>
+    <p>Looking for assistance? Contact us and we’ll get back to you as soon as possible.</p>
+  </section>
+
+  <section class="contact-details-section">
+    <div class="message-form">
+      <h3>Leave Us A Message</h3>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email address" required />
+        <textarea placeholder="Write Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="information-section">
+      <h3>Still Have Questions?</h3>
+      <p>Call Us We Will Be Happy To Help</p>
+      <a href="tel:+854851">+97785748574</a>
+      <p>Monday - Friday</p>
+      <p>9AM TO 8PM Eastern Time</p>
+      <h4>NEXUS OFFICE</h4>
+      <p>HYDERABAD<br />K7A 1C2.<br />Rock Garden</p>
+      <h4>UK Office</h4>
+      <p><br />AB54 5XQ,<br />Hyderabad</p>
+      <div class="social-links">
+        <a href="www.facebook.com"><img src="https://img.icons8.com/?size=100&id=kQzCK4emnaD2&format=png&color=000000" alt="Facebook" /></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=8824&format=png&color=000000" alt="Twitter" /></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=RhYNENh5cxlS&format=png&color=000000" alt="Instagram" /></a>
+      </div>
+    </div>
+  </section>
+
+  {% include 'footer.html' %}
+</main>
+
+{% endblock %}

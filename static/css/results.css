@@ -1,0 +1,58 @@
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Header styling */
+.container h1 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Result box styling */
+.result-box {
+    background: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+/* Score styling */
+.result-box .score {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.result-box .score .prediction {
+    font-weight: bold;
+    color: #ff5722; /* Highlighted score */
+}
+
+/* Note styling */
+.result-box .note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.5;
+}

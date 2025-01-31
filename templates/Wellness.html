@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Wellness Tips{% endblock %}
+
+{% block content %}
+<main>
+  <div class="wellness-container">
+    <!-- Header Section -->
+    <section class="wellness-header">
+      <h1>Wellness Tips</h1>
+      <p>"Empower your mind and body with yoga, gym, and holistic care."</p>
+    </section>
+
+    <!-- Video Section -->
+    <section class="wellness-video-section">
+      <div class="wellness-video-container">
+        <video autoplay muted loop playsinline class="wellness-video">
+          <source src="/static/6870437-uhd_3840_2160_30fps.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="wellness-video-text">Discover the Power of Movement</div>
+    </section>
+
+    <!-- Horizontal Image Grid -->
+    <section class="wellness-image-grid">
+      <div class="wellness-grid-item">
+        <img src="https://via.placeholder.com/200" alt="Yoga Pose 1">
+        <p>Pose 1</p>
+      </div>
+      <div class="wellness-grid-item">
+        <img src="https://via.placeholder.com/200" alt="Yoga Pose 2">
+        <p>Pose 2</p>
+      </div>
+      <div class="wellness-grid-item">
+        <img src="https://via.placeholder.com/200" alt="Yoga Pose 3">
+        <p>Pose 3</p>
+      </div>
+      <div class="wellness-grid-item">
+        <img src="https://via.placeholder.com/200" alt="Yoga Pose 4">
+        <p>Pose 4</p>
+      </div>
+      <div class="wellness-grid-item">
+        <img src="https://via.placeholder.com/200" alt="Yoga Pose 5">
+        <p>Pose 5</p>
+      </div>
+      <div class="wellness-grid-item">
+        <img src="https://via.placeholder.com/200" alt="Yoga Pose 6">
+        <p>Pose 6</p>
+      </div>
+    </section>
+
+    <!-- Wellness Tips Section -->
+    <section class="wellness-tips-section">
+        <h2 class="wellness-tips-title">Wellness Tips: Yoga and Gym</h2>
+      
+        <div class="wellness-grid">
+          <!-- Row 1 -->
+          <div class="wellness-row">
+            <div class="wellness-tip" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+              <video class="wellness-tip-video" muted loop>
+                <source src="/static/surya.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="wellness-tip-content">
+                <h3>Sun Salutation (Surya Namaskar)</h3>
+                <p>A full-body workout improving flexibility and circulation for glowing skin.</p>
+              </div>
+            </div>
+      
+            <div class="wellness-tip" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+              <video class="wellness-tip-video" muted loop>
+                <source src="/static/surya.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="wellness-tip-content">
+                <h3>Tree Pose (Vrikshasana)</h3>
+                <p>Enhances balance and focus while improving oxygen flow for better skin health.</p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Row 2 -->
+          <div class="wellness-row">
+            <div class="wellness-tip" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+              <video class="wellness-tip-video" muted loop>
+                <source src="/static/6870437-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="wellness-tip-content">
+                <h3>Bridge Pose (Setu Bandhasana)</h3>
+                <p>Relieves stress, improves posture, and enhances blood flow for glowing skin.</p>
+              </div>
+            </div>
+      
+            <div class="wellness-tip" onmouseover="playVideo(this)" onmouseout="pauseVideo(this)">
+              <video class="wellness-tip-video" muted loop>
+                <source src="/static/6870437-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="wellness-tip-content">
+                <h3>Warrior Pose (Virabhadrasana)</h3>
+                <p>Strengthens muscles and reduces anxiety, promoting mental clarity and confidence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+        <!-- Repeat for additional rows -->
+      
+    </Main>      
+{% include 'footer.html' %}
+
+{% endblock %}

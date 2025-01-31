@@ -1,0 +1,956 @@
+/* General Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  /* font-family: Arial, sans-serif; */
+  background-color: #F6F7F9;
+  min-height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* font-family: gilroy; */ 
+  transition: allc0.3s ease-in-out;
+}
+::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in webkit-based browsers like Chrome and Safari */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#FFFFFF;
+  padding: 20px 40px;
+  width: 100%;
+  max-width: 1500px; /* Sets max width */
+  margin: 0 auto; /* Centers navbar */
+  position: fixed;
+  top: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 45px;
+  transition: transform 0.3s ease-in-out;
+  font-family: "Rubik", sans-serif;
+    font-size: 16px;
+}
+
+.logo img {
+  max-width: 65%;
+  height: auto;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  position: relative;
+  margin: 0 15px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-item a {
+  color: #0A0A0A99;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-item a:hover {
+  color: #000000;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #ffffff;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  list-style: none; /* Remove dots */
+  padding: 0; /* Remove default padding */
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  padding: 8px 15px;
+}
+
+.dropdown-content li a {
+  color: #0A0A0A99;
+  text-decoration: none;
+}
+
+/* Navbar Button */
+.navbar-btn {
+  background-color: transparent;
+  border: 2px solid #000000;
+  color: #0A0A0A99;
+  padding: 8px 16px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Prevents button from shrinking */
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Content Wrapper for Image and Main Content */
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 144px 20px 64px; /* Add padding on both sides */
+  max-width: 1200px; /* Increase max width if needed */
+  margin: auto;
+  gap: 20px;
+  height: 150vh; /* Add gap to create separation */
+}
+
+/* Left Image Section */
+.image-section {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skin-image {
+  max-width: 420px;
+  max-height: 280px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+}
+
+.check-text {
+  margin-top: 20px;
+  font-size: 3.75rem;
+  color: #454545;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Right Main Content Section */
+.main-content {
+  width: 48%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+
+.main-content h1 {
+  color: #125496;
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.instructions {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin: 20px 0;
+}
+
+.upload-section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.primary-btn, .accent-btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.primary-btn {
+  background-color: #125496;
+  color: #fff;
+}
+
+.accent-btn {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+#results {
+  background-color: #e6f3ff;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#results h2 {
+  font-size: 1.5rem;
+  color: #125496;
+}
+
+
+#recommendations h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+#productList {
+  list-style: none;
+  padding: 0;
+}
+
+#productList li {
+  font-size: 1rem;
+  color: #555;
+  padding: 5px 0;
+}
+
+/* Loader Styles */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+}
+
+.loader .spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top: 6px solid #125496;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.loader p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Popup Result Box */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+}
+.popup-content h2{
+  color: #125496;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Loader Background Overlay (Optional) */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.6); /* Adjust transparency as needed */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 9998;
+}
+
+/* Loader Container (Positioned in Bottom-Right Corner) */
+.loader {
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Small shadow for emphasis */
+}
+
+/* Spinner 
+.loader .spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #125496;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loader p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Spinner Animation 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+*/
+/* Inline Loader Styling */
+.inline-loader {
+  display: none; /* Hidden by default */
+  margin-top: 10px; /* Space below the button */
+  text-align: center;
+}
+
+.inline-loader .spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #125496;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+.inline-loader p {
+  font-size: 0.9rem;
+  color: blue;
+  margin-top: 8px;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*second page */
+#page1{
+  height:auto;
+  width: 100%;
+  background-color: #e6f3ff;
+  padding: 20px 0;
+}
+
+/* Page Container */
+/* Page Container */
+#page2 {
+  height: auto; /* Adjusts height to fit all items */
+  width: 100%;
+  background: linear-gradient(to bottom right, #f7f7f7, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Adjusted for natural content flow */
+  padding: 20px 0; /* Adds space above and below */
+  margin: 0;
+}
+.homeopathy-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 240px; /* Fixed width */
+  height: 380px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+/* Homeopathy Products Container */
+.homeopathy-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures items wrap to the next line */
+  justify-content: center; /* Centers the items horizontally */
+  gap: 20px; /* Adds spacing between items */
+  width: 100%;
+  padding: 20px; /* Adds inner padding to the container */
+}
+
+/* Grid Layout for Products */
+.homeopathy-products {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+  gap: 20px; /* Space between product boxes */
+  justify-items: center;
+  align-items: stretch;
+  padding: 0 10px;
+  margin: 0 auto;
+  width: 100%; /* Full width for no gaps */
+  box-sizing: border-box;
+}
+
+/* Individual Product Box */
+.homeopathy-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 240px; /* Fixed width */
+  height: 380px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space for content */
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.homeopathy-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Image */
+.homeopathy-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+/* Product Title */
+.homeopathy-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Product Description */
+.homeopathy-box p {
+  font-size: 14px;
+  color: #555;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Ensures equal spacing */
+  text-align: justify; /* Better readability */
+}
+
+/* View Product Link */
+.homeopathy-box a {
+  color: #0066cc;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.homeopathy-box a:hover {
+  color: #0056b3;
+}
+.homeopathy-title {
+  font-family: gilroy;
+  color: #125496;
+  font-weight: 600;
+  font-size: 4.5rem;
+
+}
+
+
+/* Main content background color FRONTEND PAGE  */
+#page3 {
+  /* background-color:#F5E41B; */
+  background-color: rgb(255, 255, 255);
+  height: 100vh; 
+  width: 100%;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#page3 h1{
+  font-size: 6.9vw;
+  line-height: 6vw;
+  font-weight: 100;
+  letter-spacing:-3px ;
+  font-family: gilroy;
+  font-weight: 500;
+}
+
+#page4 {
+  display: flex;
+  flex-direction: column; /* Aligns the h1 elements vertically */
+  justify-content: center; /* Centers the text vertically */
+  align-items: center; /* Centers the text horizontally */
+  height: 100vh; /* Ensure it takes full viewport height */
+  text-align: center; /* Centers the text inside the h1 */
+  background-color: #000000;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ffffff; /* Initial color - whitesmoke */
+  }
+  33% {
+    color: #ff6f61; /* Light Red */
+  }
+  66% {
+    color: #6aa84f; /* Green */
+  }
+  100% {
+    color: #ffffff; /* Back to whitesmoke */
+  }
+}
+
+#page4 h1 {
+  font-size: 9vw;
+  text-transform: uppercase;
+  font-family: gilroy, sans-serif;
+  font-weight: 850;
+  line-height: 8vw;
+  margin: 0;
+  color: #ffffff; /* Initial static color */
+  animation: none; /* No animation by default */
+}
+
+
+#page4 p{
+  color: #ddd;
+  font-size: 2.5vw;
+  font-family: gilroy;
+}
+
+
+#page5 {
+  padding: 30px 20px; /* Adds top and bottom padding, and left/right padding */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-color: black;
+  display: flex;
+  justify-content: center; /* Centers the video section horizontally */
+  align-items: center; /* Centers the video section vertically */
+}
+
+
+
+.video-section {
+  width: 100%;
+  max-width: 90%; /* Limits the width to 90% of the viewport width */
+  height: calc(100vh - 60px); /* Subtracts the top and bottom padding */
+  background-color:black; /* Background color behind video */
+  border-radius: 10px; /* Optional: Round the corners of the container */
+  overflow: hidden; /* Ensures no overflow from video */
+}
+
+video {
+  width: 100%;
+  height: 100%; /* Makes the video fill the entire container */
+  object-fit: cover; /* Ensures the video covers the entire container without distortion */
+}
+
+
+
+
+/*page6 stART***************************************************************************/
+
+#page6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Adjust for footer height */
+  width: 100%;
+  background-color:#FFFFFF;
+  text-align: center;
+  padding-bottom: 60px; /* Reserve space for the footer */
+}
+
+
+.row {
+  width: 100%; /* Ensure row spans the full width */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  /* background-color: #5964ff; */
+  padding-bottom: 35px; /* Add gap below the row */
+}
+
+.row h1 {
+  color: black;
+  font-size: 5rem;
+  margin: 0 0 20px 0; /* Add bottom margin */
+  font-family:gilroy, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+
+.container {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 60vh;
+  /* border: 2px solid black; */
+  margin: 0 20px;
+}
+
+
+.left-section {
+  background-color: #f4f6fb;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.left-section .risk-mitigation {
+  margin-bottom: 20px;
+}
+
+.risk-mitigation img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.risk-mitigation h1 {
+  font-size: 28px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.risk-mitigation p {
+  font-size: 48px;
+  color: #5964ff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.right-section {
+  padding: 20px;
+  flex: 1;
+}
+
+.feature {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Align items in a column */
+  justify-content: flex-start; /* Align items to the top */
+  align-items: stretch; /* Stretch items to full width of the container */
+  padding: 10px 20px; /* Adjust padding for balance */
+  border-bottom: 2px solid #ddd;
+  position: relative;
+}
+
+
+.feature::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%; /* Adjusts the width of the hover effect */
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.feature:hover::after {
+  background-color:#5964ff;
+ /* Change this to the desired hover color */
+}
+
+.feature:last-child {
+  border-bottom: none; 
+}
+
+
+.feature img {
+  width: 20px;
+  margin-right: 15px;
+}
+
+.feature h3 {
+  margin: 0 0 5px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 15px;
+  color: #0A0A0A99;
+}
+/*page 7*/
+#page7 {
+  display: flex;
+  flex-direction: column; /* Aligns content vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  height: 80vh; /* Full viewport height */
+  width: 100%; /* Full width of viewport */
+  text-align: center; /* Centers text */
+  background-color:#FFFFFF; /* Red background */
+}
+
+/* Cards container */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow cards to wrap */
+  max-width: 1200px; /* Prevent cards from stretching too wide */
+}
+
+/* Individual card styles */
+.card {
+  background: #ffffff; /* White background */
+  border: 1px solid #FCFCFD; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  width: 300px;
+  height: 350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: left; /* Left-align text */
+}
+
+/* Icon container */
+.card .icon {
+  margin-bottom: 10px;
+}
+
+.card .icon img {
+  width: 50px; /* Adjust icon size */
+  height: 50px;
+}
+
+/* Icon links */
+.icon a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color */
+  transition: color 0.3s ease-in-out; /* Hover effect */
+}
+
+.icon a:hover {
+  color: #6a5acd; /* Change color on hover */
+}
+
+/* Card title */
+.card h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding-top: 15px;
+}
+
+/* Card description */
+.card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0; /* Removes extra margin */
+  padding-bottom: 10px; /* Adjust padding as needed */
+}
+
+/* Card links */
+.card a {
+  font-size: 1rem;
+  color: #6a5acd; /* Blue link */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Ensures no padding issues */
+}
+
+
+.card a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+/* General Styles */
+.wellness-container {
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+
+}
+
+/* Header Section */
+.wellness-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wellness-header h1 {
+  font-size: 2.5rem;
+  color: #125496;
+}
+
+.wellness-header p {
+  font-style: italic;
+  color: #555;
+}
+
+/* Video Section */
+.wellness-video-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.wellness-video-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.wellness-video {
+  width: 90%;
+  height: 50vh;
+  border-radius: 10px;
+}
+
+.wellness-video-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Horizontal Image Grid */
+.wellness-image-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.wellness-grid-item {
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wellness-grid-item img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wellness-grid-item p {
+  margin-top: 5px;
+  color: #555;
+}
+
+.wellness-grid-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Wellness Tips Section */
+.wellness-tips-title{
+  text-align: center;
+  /* display: flex; */
+}
+
+.wellness-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.wellness-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.wellness-tip {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.wellness-tip:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.wellness-tip-video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.wellness-tip-content {
+  text-align: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  width: 100%;
+}

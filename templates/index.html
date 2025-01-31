@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skin Type Checker</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  {% extends "base.html" %}
+  {% block content %}
+  <!-- Main Content and Image Section -->
+  <div class="content-wrapper" data-scroll-container>
+    <!-- Left Image Section -->
+    <section class="image-section">
+      <img src="/static/facial-recognition-collage-concept.jpg" alt="Skin Analysis Image" class="skin-image">
+      <p class="check-text">Check Skin Type With AI</p>
+    </section>
+
+    <!-- Right Main Content Section -->
+    <section class="main-content">
+      <h1>Skin Type Checker</h1>
+      <div class="instructions">
+        <p>Upload a clear photo or use your camera, then click "Check My Skin Type" to receive personalized product recommendations.</p>
+      </div>
+
+      <div class="upload-section">
+        <input type="file" id="photo" accept="image/*">
+        <button class="primary-btn" onclick="openCamera()">Take Picture</button>
+        <video id="video" autoplay style="display:none;" width="300"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <button class="primary-btn" id="captureButton" style="display:none;" onclick="captureImage()">Capture</button>
+        <button class="accent-btn" id="checkSkinType">Check My Skin Type</button>
+        <!-- <div id="loader" class="loader" style="display: none;">-->
+    <div class="inline-loader" id="inlineLoader">
+      <div class="spinner"></div>
+      <p>Analyzing your image with our AI model. Please wait...</p>
+    </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Popup Result Box -->
+  <div id="resultsPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <h2>Your Skin Type: <span id="skinType"></span> (<span id="confidence"></span>% Confidence)</h2>
+      <div id="recommendations">
+        <h3>Recommended Products:</h3>
+        <ul id="productList"></ul>
+      </div>
+    </div>
+  </div>
+<!--Page one for product items show -->
+  
+<!--page 2*************************************-->
+<div id="page2">
+  <div class="homeopathy-container">
+    <h2 class="homeopathy-title">Explore Homeopathy Products</h2>
+    <div class="homeopathy-products">
+      <!-- Product Box 1 -->
+      <div class="homeopathy-box">
+        <img src="/static/img1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      
+      <!-- Product Box 2 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product2.jpg" alt="Product 2" class="homeopathy-image">
+        <h3>GlowSkin Tablets</h3>
+        <p>Revitalize your skin from within with these tablets, designed for a radiant and youthful appearance.</p>
+        <a href="/product2" class="homeopathy-button">Check Product</a>
+      </div>
+
+      <!-- Product Box 3 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product3.jpg" alt="Product 3" class="homeopathy-image">
+        <h3>JointFlex Oil</h3>
+        <p>Relieve joint pain and stiffness naturally with this homeopathic oil.</p>
+        <a href="/product3" class="homeopathy-button">Check Product</a>
+      </div>
+
+      <!-- Product Box 4 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product4.jpg" alt="Product 4" class="homeopathy-image">
+        <h3>Immunity Booster Syrup</h3>
+        <p>Strengthen your immune system naturally with this powerful syrup.</p>
+        <a href="/product4" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <!-- Product Box 5 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product5.jpg" alt="Product 5" class="homeopathy-image">
+        <h3>DigestEase Tablets</h3>
+        <p>Support healthy digestion and ease common gastrointestinal issues with this homeopathic solution.</p>
+        <a href="/product5" class="homeopathy-button">Check Product</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--page 1 *********************************************-->
+<div id="page1">
+  <div class="homeopathy-container">
+    <h2 class="homeopathy-title">Explore Homeopathy Products</h2>
+    <div class="homeopathy-products">
+      <!-- Product Box 1 -->
+      <div class="homeopathy-box">
+        <img src="/static/img1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      
+      <!-- Product Box 2 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product2.jpg" alt="Product 2" class="homeopathy-image">
+        <h3>GlowSkin Tablets</h3>
+        <p>Revitalize your skin from within with these tablets, designed for a radiant and youthful appearance.</p>
+        <a href="/product2" class="homeopathy-button">Check Product</a>
+      </div>
+
+      <!-- Product Box 3 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product3.jpg" alt="Product 3" class="homeopathy-image">
+        <h3>JointFlex Oil</h3>
+        <p>Relieve joint pain and stiffness naturally with this homeopathic oil.</p>
+        <a href="/product3" class="homeopathy-button">Check Product</a>
+      </div>
+
+      <!-- Product Box 4 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product4.jpg" alt="Product 4" class="homeopathy-image">
+        <h3>Immunity Booster Syrup</h3>
+        <p>Strengthen your immune system naturally with this powerful syrup.</p>
+        <a href="/product4" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <div class="homeopathy-box">
+        <img src="https://example.com/product1.jpg" alt="Product 1" class="homeopathy-image">
+        <h3>CalmMind Drops</h3>
+        <p>A natural remedy for anxiety and stress, promoting calmness and mental clarity.</p>
+        <a href="/product1" class="homeopathy-button">Check Product</a>
+      </div>
+      <!-- Product Box 5 -->
+      <div class="homeopathy-box">
+        <img src="https://example.com/product5.jpg" alt="Product 5" class="homeopathy-image">
+        <h3>DigestEase Tablets</h3>
+        <p>Support healthy digestion and ease common gastrointestinal issues with this homeopathic solution.</p>
+        <a href="/product5" class="homeopathy-button">Check Product</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  
+  {% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Website Title{% endblock %}</title>
+  
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/contact.css">
+  
+
+</head>
+<body>
+  <!-- Shared Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="/"><img src="/static/logo.png" alt="Logo"></a>
+    </div>
+    
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item dropdown">
+          <a href="#">Services</a>
+          <ul class="dropdown-content">
+            <li><a href="/">Home</a></li>
+            <li><a href="/index">Skin Analysis</a></li>
+            <li><a href="/Mental">Mental Health Check</a></li>
+            <li><a href="/Doctor">AI Doctor</a></li>
+            <li><a href="/Wellness">Wellness Tips</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms Of Service</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a href="/aboutus">About</a></li>
+        <li class="nav-item"><a href="/contact">Contact</a></li>
+        <li class="nav-item"><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+    
+    <button class="navbar-btn"><a href="/register">Get Started</a></button>
+  </header>
+
+  <!-- Main Content -->
+  <main data-scroll-container>
+    {% block content %}
+    {% endblock %}
+  </main>
+ <!-- Locomotive Scroll JS -->
+  
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="#">Health</a></li>
+        <li><a href="#">GYM</a></li>
+        <li><a href="#">Student</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Benefits</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Our Story</a></li>
+        <li><a href="#">Team</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+    <div class="footer-column subscribe-column">
+      <h4>Subscribe</h4>
+      <form>
+        <input type="email" placeholder="Email address" required>
+        <button type="submit">→</button>
+      </form>
+      <p>Simply enter your email below to subscribe and start receiving our updates today!</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-logo">
+      <img src="https://img.icons8.com/?size=100&id=mD03SZJ41RBp&format=png&color=000000" alt="">
+      <span>WellNexus.</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+    <div class="footer-social-icons">
+      <a href="#"><img src="https://img.icons8.com/?size=100&id=kQzCK4emnaD2&format=png&color=000000" alt="Facebook"></a>
+      <a href="#"><img src="https://img.icons8.com/?size=100&id=8824&format=png&color=000000" alt="Twitter"></a>
+      <a href="#"><img src="https://img.icons8.com/?size=100&id=RhYNENh5cxlS&format=png&color=000000" alt="Instagram"></a>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  
+  <!-- Your custom app.js file -->
+  <script src="/static/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Locomotive Scroll only after the DOM is fully loaded
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,  // Enable smooth scrolling
+        smoothMobile: true,  // Enable smooth scrolling for mobile devices
+        multiplier: 1.2,  // Speed multiplier
+        lerp: 0.1,  // Smoothness of the scroll transition
+      });
+
+      // Check if the scroll is working and log the instance
+      scroll.on("scroll", function (instance) {
+        console.log("Scrolling...", instance);
+      });
+    });
+  </script> 
+</body>
+</html>
